@@ -111,6 +111,18 @@ void loop() {
             client.print(sensorReading);
             client.println("<br />");
           }
+
+          // output the value of each digital input pin
+          client.println("<h2>Digital Input</h2>");
+          for (int digitalChannel = 0; digitalChannel < 6; digitalChannel++) {
+            int sensorDigitalReading = digitalRead(digitalChannel);
+            client.print("Digital Input D");
+            client.print(digitalChannel);
+            client.print(" is ");
+            client.print(sensorDigitalReading);
+            client.println("<br />");
+          }
+
           client.println("<br />");
           client.println("<hr />");
           client.print("<h2>Relay Control</h2>");
